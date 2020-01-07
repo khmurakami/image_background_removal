@@ -114,3 +114,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Models
+mobile_net_model
+xception_model
