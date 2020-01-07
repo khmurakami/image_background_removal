@@ -9,3 +9,16 @@ $ wget http://download.tensorflow.org/models/deeplabv3_pascal_train_aug_2018_01_
 $ tar xvzf deeplabv3_mnv2_pascal_train_aug_2018_01_29.tar.gz -C mobile_net_model --strip=1
 $ tar xvzf deeplabv3_pascal_train_aug_2018_01_04.tar.gz -C xception_model --strip=1
 ```
+
+# Install
+
+```shell
+$ python setup.py install
+$ pip install requirements.txt
+```
+
+# Run Example
+
+```shell
+$ python example.py
+```
