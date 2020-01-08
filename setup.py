@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="printfulpy",
+    name="background_helper",
     version="0.0.3",
     author="Kalani Murakami",
     author_email="kalanimurakami1218@gmail.com",

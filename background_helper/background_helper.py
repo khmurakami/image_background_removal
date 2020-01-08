@@ -79,7 +79,7 @@ class BackgroundRemoval(object):
         output_image = image.convert('RGB')
         return output_image, seg_map
 
-    def draw_segment(self, base_img, mat_img, filename_d):
+    def draw_segment(self, base_img, mat_img, filename_d, save_image=False):
 
         """Postprocessing. Saves complete image.
 
@@ -89,7 +89,7 @@ class BackgroundRemoval(object):
             filename_d (): Output image file name
 
         Return:
-
+            img: (numpy_array): The 
 
         """
         # Get image size
@@ -110,9 +110,12 @@ class BackgroundRemoval(object):
         # Remove file extension
         filename_d = os.path.splitext(filename_d)[0]
         # Save image
-        img.save(filename_d + ".png")
+        if save_image is True:
+            img.save(filename_d + ".png")
 
-    def run_visualization(self, filepath, filename_r):
+        return img 
+
+    def run_visualization(self, filepath, filename_r, save_image=False):
 
         """Inferences DeepLab model and visualizes result.
 
@@ -128,5 +131,6 @@ class BackgroundRemoval(object):
             print('Cannot retrieve image. Please check file: ' + filepath)
             return
         resized_im, seg_map = self.run(orignal_im)
-        self.draw_segment(resized_im, seg_map, filename_r)
+        img = self.draw_segment(resized_im, seg_map, filename_r, save_image)
+        return img
 
